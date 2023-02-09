@@ -3,6 +3,7 @@ package com.tuliomeran.jpaexample;
 import com.tuliomeran.jpaexample.Course.Course;
 import com.tuliomeran.jpaexample.Course.CourseMaterial;
 import com.tuliomeran.jpaexample.Course.CourseMaterialRepository;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,8 +16,6 @@ public class CourseMaterialRepositoryTest {
     @Autowired
     private CourseMaterialRepository _repository;
 
-
-
     @Test
     public void SaveCourseMaterial() {
 
@@ -25,7 +24,7 @@ public class CourseMaterialRepositoryTest {
         this._repository.save(courseMaterial);
     }
 
-    @Test()
+    @Test
     public void printAllCourseMaterials() {
         List<CourseMaterial> materials = this._repository.findAll();
         System.out.println(materials);
